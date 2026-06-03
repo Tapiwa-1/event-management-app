@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, FolderGit2, LayoutGrid } from '@lucide/vue';
+import {
+    BookOpen,
+    CalendarDays,
+    ChartColumn,
+    ClipboardList,
+    FolderGit2,
+    HandCoins,
+    LayoutGrid,
+    Package,
+    Receipt,
+    Settings2,
+    Users,
+    Warehouse,
+} from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
@@ -15,6 +28,15 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
+import { index as clientsIndex } from '@/routes/clients';
+import { index as eventsIndex } from '@/routes/events';
+import { index as expensesIndex } from '@/routes/expenses';
+import { index as packagesIndex } from '@/routes/packages';
+import { index as paymentsIndex } from '@/routes/payments';
+import { index as quotationsIndex } from '@/routes/quotations';
+import { index as reportsIndex } from '@/routes/reports';
+import { index as resourcesIndex } from '@/routes/resources';
+import { index as servicesIndex } from '@/routes/services';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -22,6 +44,51 @@ const mainNavItems: NavItem[] = [
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
+    },
+    {
+        title: 'Clients',
+        href: clientsIndex(),
+        icon: Users,
+    },
+    {
+        title: 'Events',
+        href: eventsIndex(),
+        icon: CalendarDays,
+    },
+    {
+        title: 'Services',
+        href: servicesIndex(),
+        icon: Settings2,
+    },
+    {
+        title: 'Packages',
+        href: packagesIndex(),
+        icon: Package,
+    },
+    {
+        title: 'Quotations',
+        href: quotationsIndex(),
+        icon: ClipboardList,
+    },
+    {
+        title: 'Payments',
+        href: paymentsIndex(),
+        icon: HandCoins,
+    },
+    {
+        title: 'Resources',
+        href: resourcesIndex(),
+        icon: Warehouse,
+    },
+    {
+        title: 'Expenses',
+        href: expensesIndex(),
+        icon: Receipt,
+    },
+    {
+        title: 'Reports',
+        href: reportsIndex(),
+        icon: ChartColumn,
     },
 ];
 
